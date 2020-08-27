@@ -33,3 +33,12 @@
         "src/styles.css"
       ],
     ```
+
+  - Client Login and Register:
+    - Creating Login and the NAVBAR.
+      - e.g.: https://getbootstrap.com/docs/4.5/examples/jumbotron/
+    - Angular Template Forms:
+    - Using Services in Angular:
+    - Conditionally display elements on a page. e.g.: Login/Logout.
+    - Create a register component:
+    - Component communication. Parent/child. Also, child-to-parent.
