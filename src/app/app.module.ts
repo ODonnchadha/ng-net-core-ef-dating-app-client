@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 
+import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
@@ -24,6 +25,7 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
     FormsModule
   ],
   providers: [
+    AlertifyService,
     AuthService,
     ErrorInterceptorProvider
   ],

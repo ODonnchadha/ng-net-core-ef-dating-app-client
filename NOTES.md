@@ -48,3 +48,12 @@
 - Error Handling:
   - Let's handle some errors:
   
+- Third-Party Components:
+  - Alertifyjs
+  - Angular JWT
+  - NGX Bootstrap
+  - Bootswatch
+  ```javascript
+    npm i alertifyjs
+    npm install @types/alertifyjs
+  ```
