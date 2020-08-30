@@ -68,3 +68,10 @@
     ```javascript
       npm install bootswatch
     ```
+
+- Routing:
+  - Setting up routing:
+  - Using RouterLinkActive:
+  - Using routing in code:
+  - Protecting the routes:
+  - Protecting multiple routes at once:
