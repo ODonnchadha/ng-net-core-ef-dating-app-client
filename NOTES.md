@@ -74,4 +74,8 @@
   - Using RouterLinkActive:
   - Using routing in code:
   - Protecting the routes:
+    - A type of auth guard.
+    ```javascript
+      ng g guard auth --skipTests
+    ```
   - Protecting multiple routes at once:
