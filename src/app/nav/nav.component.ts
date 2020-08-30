@@ -26,7 +26,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.authService.logOut();
-    this.alertifyService.success('Logged out successfully');
+    this.alertifyService.message('Logged out successfully');
   }
 
   ngOnInit() {
