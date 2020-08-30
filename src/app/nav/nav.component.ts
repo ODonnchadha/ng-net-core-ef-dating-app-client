@@ -10,7 +10,7 @@ import { AlertifyService } from '../_services/alertify.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private alertifyService: AlertifyService, private authService: AuthService) { }
+  constructor(public alertifyService: AlertifyService, public authService: AuthService) { }
 
   login() {
     this.authService.login(this.model).subscribe(next => {
@@ -21,12 +21,11 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn() {
-    const token = localStorage.getItem('token');
-    return !!token;
+    return this.authService.isLoggedIn();
   }
 
   logout() {
-    localStorage.removeItem('token');
+    this.authService.logOut();
     this.alertifyService.success('Logged out successfully');
   }
 

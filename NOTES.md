@@ -50,10 +50,13 @@
   
 - Third-Party Components:
   - Alertifyjs
-  - Angular JWT
-  - NGX Bootstrap
-  - Bootswatch
-  ```javascript
+    ```javascript
     npm i alertifyjs
     npm install @types/alertifyjs
   ```
+  - Angular JWT
+    ```javascript
+    npm i @auth0/angular-jwt
+  ```
+  - NGX Bootstrap
+  - Bootswatch
