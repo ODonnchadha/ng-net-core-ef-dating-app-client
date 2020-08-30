@@ -39,10 +39,12 @@
       - e.g.: https://getbootstrap.com/docs/4.5/examples/jumbotron/
     - Angular Template Forms:
     - Using Services in Angular:
-
     - Conditionally display elements on a page. e.g.: Login/Logout.
       - https://getbootstrap.com/docs/4.5/components/dropdowns/
       - Structural directives directly change the DOM. e.g.: *ngIf="loggedIn()"
-      
     - Create a register component:
     - Component communication. Parent/child. Also, child-to-parent.
+
+- Error Handling:
+  - Let's handle some errors:
+  
