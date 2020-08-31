@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RouterModule } from '@angular/router';
@@ -37,6 +38,15 @@ import { appRoutes } from './routes';
     BsDropdownModule.forRoot(),
     BrowserModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          return localStorage.getItem('token');
+        },
+        allowedDomains: ['localhost:44362'],
+        disallowedRoutes: ['localhost:44362/api/auth']
+      }
+    }),
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
