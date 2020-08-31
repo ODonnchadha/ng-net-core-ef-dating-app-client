@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
+import { UserService } from './_services/user.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { appRoutes } from './routes';
 
@@ -40,6 +41,7 @@ import { appRoutes } from './routes';
   providers: [
     AlertifyService,
     AuthService,
+    UserService,
     ErrorInterceptorProvider
   ],
   bootstrap: [AppComponent]
