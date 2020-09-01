@@ -22,6 +22,8 @@ import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { UserService } from './_services/user.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { appRoutes } from './routes';
 
 @NgModule({
@@ -58,7 +60,9 @@ import { appRoutes } from './routes';
     AlertifyService,
     AuthService,
     UserService,
-    ErrorInterceptorProvider
+    ErrorInterceptorProvider,
+    MemberDetailResolver,
+    MemberListResolver
   ],
   bootstrap: [AppComponent]
 })
