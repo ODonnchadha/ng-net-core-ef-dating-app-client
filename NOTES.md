@@ -91,3 +91,7 @@
     - https://valor-software.com/ngx-bootstrap/#/tabs
   - Route resolvers:
   - Adding a Photo gallery:
+    - https://github.com/SaeedSpate/ngx-gallery-9
+    ```javascript
+      npm install ngx-gallery-9 --save
+    ```

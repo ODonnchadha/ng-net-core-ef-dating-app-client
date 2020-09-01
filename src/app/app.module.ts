@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgxGalleryModule } from 'ngx-gallery-9';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RouterModule } from '@angular/router';
 
@@ -42,6 +43,7 @@ import { appRoutes } from './routes';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    NgxGalleryModule,
     BrowserModule,
     HttpClientModule,
     JwtModule.forRoot({
