@@ -79,3 +79,15 @@
       ng g guard auth --skipTests
     ```
   - Protecting multiple routes at once:
+
+- Building a great looking UI:
+  - Using types in Typescript:
+    - An interface is only used by Typescript at compile time, and is then removed.
+    - Advantages: (1) Compile-time checking. (2) Intellisense. (3) Auto-completion.
+    - Creating type interfaces of both user and photo.
+  - Retrieving Users from the API:
+  - Using Bootstrap classes to create member cards:
+  - Adding a detailed view of the users.
+    - https://valor-software.com/ngx-bootstrap/#/tabs
+  - Route resolvers:
+  - Adding a Photo gallery:
