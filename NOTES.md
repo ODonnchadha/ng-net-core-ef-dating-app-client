@@ -88,5 +88,6 @@
   - Retrieving Users from the API:
   - Using Bootstrap classes to create member cards:
   - Adding a detailed view of the users.
+    - https://valor-software.com/ngx-bootstrap/#/tabs
   - Route resolvers:
   - Adding a Photo gallery:
