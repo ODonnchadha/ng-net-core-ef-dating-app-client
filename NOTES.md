@@ -95,3 +95,9 @@
     ```javascript
       npm install ngx-gallery-9 --save
     ```
+
+- Updating profiles
+  - Creating a component for editing profile.
+  - Using a CanDeactivate Route Guard. (Unsaved Changes.)
+  - The @ViewChild decorator.
+  - Persisting changes to the API.
