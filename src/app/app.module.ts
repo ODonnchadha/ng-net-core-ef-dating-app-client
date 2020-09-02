@@ -9,6 +9,8 @@ import { NgxGalleryModule } from 'ngx-gallery-9';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RouterModule } from '@angular/router';
 
+import { appRoutes } from './routes';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
@@ -21,13 +23,14 @@ import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 
 import { AlertifyService } from './_services/alertify.service';
+import { AuthGuard } from './_guards/auth.guard';
 import { AuthService } from './_services/auth.service';
 import { UserService } from './_services/user.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
-import { appRoutes } from './routes';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,8 @@ import { appRoutes } from './routes';
     AlertifyService,
     AuthService,
     UserService,
+    AuthGuard,
+    PreventUnsavedChangesGuard,
     ErrorInterceptorProvider,
     MemberDetailResolver,
     MemberEditResolver,
