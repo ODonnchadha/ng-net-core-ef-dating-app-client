@@ -9,8 +9,11 @@ import { User } from '../_models/user';
 })
 export class UserService {
   baseUrl = environment.apiUrl;
-
+  currentUser: User;
   constructor(private http: HttpClient) { }
+
+  deletePhoto(nameId, photoId) {
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl + 'users');
@@ -18,6 +21,11 @@ export class UserService {
 
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
+  }
+
+  setDefaultPhoto(userId: number, id: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + userId + '/photos/' + id + '/default',{});
   }
 
   updateUser(id: number, user: User) {

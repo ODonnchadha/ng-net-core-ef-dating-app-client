@@ -22,6 +22,9 @@ export class AuthService {
     }
   }
 
+  changeMemberPhoto(photoUrl: string): void {
+  }
+
   isLoggedIn() {
     const token = localStorage.getItem(this.TOKEN);
     return !this.jwtHelper.isTokenExpired(token);

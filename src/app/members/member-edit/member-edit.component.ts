@@ -33,6 +33,10 @@ export class MemberEditComponent implements OnInit {
     });
   }
 
+  updateMemberPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
+  }
+
   updateUser() {
     this.userService.updateUser(this.authService.decodedToken.nameid, this.user).subscribe(next => {
       this.alertify.success('Profile updated successfully');

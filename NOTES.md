@@ -119,6 +119,12 @@
 
   - Adding a new controller.
   - Adding a file uploader. (Third-party library.)
+    - ng2-file upload:
+    - https://valor-software.com/ng2-file-upload/
+    ```javascritp
+      npm install ng2-file-upload --save
+    ```
+
   - Seeting the default photo.
   - Any-to-any component communication.
   - Deleting photos.
