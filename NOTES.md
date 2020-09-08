@@ -101,3 +101,24 @@
   - Using a CanDeactivate Route Guard. (Unsaved Changes.)
   - The @ViewChild decorator.
   - Persisting changes to the API.
+
+- Uploading Photos:
+
+  - Where to store?
+    - Database? BLOBs. Least effecient. Performance cost.
+    - File system? Disk space cost.
+    - Cloud provider. Scalable. URL stored in database. Complexity.
+    - Cloudinary. Free tier. API key/secret.
+      - 1. Client uploads photo to API with JWT.
+      - 2. Server uploads photo to Cloudinary.
+      - 3. Cloudinary stores photo, sends response.
+      - 4. API saves photo URL and publicid back to DB.
+      - 5. Saved in DB and given SQL id.
+      - 6. 201 CREATED response with location header.
+      - https://cloudinary.com/
+
+  - Adding a new controller.
+  - Adding a file uploader. (Third-party library.)
+  - Seeting the default photo.
+  - Any-to-any component communication.
+  - Deleting photos.
