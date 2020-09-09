@@ -124,7 +124,16 @@
     ```javascritp
       npm install ng2-file-upload --save
     ```
-
-  - Seeting the default photo.
-  - Any-to-any component communication.
+  - Setting the default photo.
+  - Any-to-any component communication:
+    - Any service is designed to supply methods and properties to any component.
+    - And we'll then subscribe to an associated observiable: Behavior Subject:
+      - Is a type of subject:
+        - Can be subscribed to.
+        - Subscribers can receive updated results.
+        - A subject is an observer (So we can send values to it.)
+      - Behavior Subject:
+        - Needs an initial value as we must always return a value on subscription.
+        - On subscription returns the last value of subject.
+        Can use the getValue() method in non-observeable code.
   - Deleting photos.
