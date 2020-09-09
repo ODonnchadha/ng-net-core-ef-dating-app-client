@@ -26,7 +26,7 @@ export class UserService {
 
   setDefaultPhoto(userId: number, id: number) {
     return this.http.post(
-      this.baseUrl + 'users/' + userId + '/photos/' + id + '/default',{});
+      this.baseUrl + 'users/' + userId + '/photos/' + id + '/default', {});
   }
 
   updateUser(id: number, user: User) {
