@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
   model: any = {};
+  photoUrl: string;
 
   constructor(
     public alertifyService: AlertifyService,
@@ -37,6 +38,9 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.currentPhotoUrl.subscribe(photoUrl => {
+      this.photoUrl = photoUrl;
+    });
   }
 
 }

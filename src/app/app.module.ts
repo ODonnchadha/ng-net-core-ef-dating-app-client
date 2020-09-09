@@ -8,7 +8,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RouterModule } from '@angular/router';
-
+import { FileUploadModule } from 'ng2-file-upload';
 import { appRoutes } from './routes';
 
 import { AppComponent } from './app.component';
@@ -20,8 +20,8 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NavComponent } from './nav/nav.component';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { RegisterComponent } from './register/register.component';
-
 import { AlertifyService } from './_services/alertify.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { AuthService } from './_services/auth.service';
@@ -43,6 +43,7 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
     MemberListComponent,
     MessagesComponent,
     NavComponent,
+    PhotoEditorComponent,
     RegisterComponent,
    ],
   imports: [
@@ -62,7 +63,8 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
       }
     }),
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FileUploadModule
   ],
   providers: [
     AlertifyService,

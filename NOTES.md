@@ -101,3 +101,39 @@
   - Using a CanDeactivate Route Guard. (Unsaved Changes.)
   - The @ViewChild decorator.
   - Persisting changes to the API.
+
+- Uploading Photos:
+
+  - Where to store?
+    - Database? BLOBs. Least effecient. Performance cost.
+    - File system? Disk space cost.
+    - Cloud provider. Scalable. URL stored in database. Complexity.
+    - Cloudinary. Free tier. API key/secret.
+      - 1. Client uploads photo to API with JWT.
+      - 2. Server uploads photo to Cloudinary.
+      - 3. Cloudinary stores photo, sends response.
+      - 4. API saves photo URL and publicid back to DB.
+      - 5. Saved in DB and given SQL id.
+      - 6. 201 CREATED response with location header.
+      - https://cloudinary.com/
+
+  - Adding a new controller.
+  - Adding a file uploader. (Third-party library.)
+    - ng2-file upload:
+    - https://valor-software.com/ng2-file-upload/
+    ```javascritp
+      npm install ng2-file-upload --save
+    ```
+  - Setting the default photo.
+  - Any-to-any component communication:
+    - Any service is designed to supply methods and properties to any component.
+    - And we'll then subscribe to an associated observiable: Behavior Subject:
+      - Is a type of subject:
+        - Can be subscribed to.
+        - Subscribers can receive updated results.
+        - A subject is an observer (So we can send values to it.)
+      - Behavior Subject:
+        - Needs an initial value as we must always return a value on subscription.
+        - On subscription returns the last value of subject.
+        Can use the getValue() method in non-observeable code.
+  - Deleting photos.
