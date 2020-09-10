@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -63,6 +63,7 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
       }
     }),
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     FileUploadModule
   ],

@@ -137,3 +137,13 @@
         - On subscription returns the last value of subject.
         Can use the getValue() method in non-observeable code.
   - Deleting photos.
+
+  # Reactive Forms:
+    - Introduction:
+      - Template-based versus reactive forms:
+        1. Most code is written inside the "template."
+        2. Most code is written inside the component.
+    - Validation:
+    - Custom Validators:
+    - The "Date" Problem:
+    - Wire it all up to the API:
