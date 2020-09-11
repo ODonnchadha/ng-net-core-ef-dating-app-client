@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
-  regsiterForm: FormGroup;
+  registerForm: FormGroup;
 
   constructor(
     private alertifyService: AlertifyService,
@@ -23,8 +23,13 @@ export class RegisterComponent implements OnInit {
   }
 
   createRegisterForm() {
-    this.regsiterForm = this.builder.group({
+    this.registerForm = this.builder.group({
+      gender: ['male'],
       username: ['', [Validators.required]],
+      knownAs: ['', Validators.required],
+      dateOfBirth: [null, Validators.required],
+      city: ['', Validators.required],
+      country: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
       confirmPassword: ['', [Validators.required]]
     }, {validator: this.passwordMatchValidator});
