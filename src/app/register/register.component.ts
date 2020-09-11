@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -13,20 +13,21 @@ export class RegisterComponent implements OnInit {
   model: any = {};
   regsiterForm: FormGroup;
 
-  constructor(private alertifyService: AlertifyService, private authService: AuthService) { }
+  constructor(
+    private alertifyService: AlertifyService,
+    private authService: AuthService,
+    private builder: FormBuilder) { }
 
   ngOnInit() {
-    this.regsiterForm = new FormGroup({
-      username: new FormControl('', [
-        Validators.required]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(40)]),
-      confirmPassword: new FormControl('', [
-        Validators.required
-      ])
-    }, this.passwordMatchValidator);
+    this.createRegisterForm();
+  }
+
+  createRegisterForm() {
+    this.regsiterForm = this.builder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
+      confirmPassword: ['', [Validators.required]]
+    }, {validator: this.passwordMatchValidator});
   }
 
   passwordMatchValidator(g: FormGroup) {
