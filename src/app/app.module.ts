@@ -32,12 +32,14 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
+import { TimeAgoExtendsPipe } from './_extensions/TimeAgoExtendsPipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListsComponent,
+    TimeAgoExtendsPipe,
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
