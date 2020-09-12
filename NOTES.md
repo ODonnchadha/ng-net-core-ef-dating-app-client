@@ -137,3 +137,19 @@
         - On subscription returns the last value of subject.
         Can use the getValue() method in non-observeable code.
   - Deleting photos.
+
+  # Reactive Forms:
+    - Introduction:
+      - Template-based versus reactive forms:
+        1. Most code is written inside the "template."
+        2. Most code is written inside the component.
+    - Validation:
+    - Custom Validators:
+
+    - The "Date" Problem:
+      - Varities, formats, localization. Browser vendors implement.
+      - https://caniuse.com/?search=date
+      - Polyfills? Ployfill.ts. Uncomment code.
+      - https://valor-software.com/ngx-bootstrap/#/datepicker
+
+    - Wire it all up to the API:
