@@ -153,3 +153,8 @@
       - https://valor-software.com/ngx-bootstrap/#/datepicker
 
     - Wire it all up to the API:
+  
+  - Date formatting:
+  ```javascript
+    npm install time-ago-pipe --save
+  ```
