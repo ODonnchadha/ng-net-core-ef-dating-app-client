@@ -138,7 +138,7 @@
         Can use the getValue() method in non-observeable code.
   - Deleting photos.
 
-  # Reactive Forms:
+  ## Reactive Forms:
     - Introduction:
       - Template-based versus reactive forms:
         1. Most code is written inside the "template."
@@ -158,3 +158,17 @@
   ```javascript
     npm install time-ago-pipe --save
   ```
+
+  ## Paging, Filtering, & Sorting.
+    - Paging in API/SPA.
+      - Avoid performance problems. 
+      - Parameters are passed via querystring.
+      - Pagesize should be limited.
+      - Always page the results by default.
+      - Perform on DB queries. Not within the controller.
+      - Substitute .ToListAsync() with a defered execution: IQuerable<T>
+      - An expression tree will be created. Execution:
+        - .ToListAsync(), ToArrayAsync(), ToDictionary()
+        - Singleton queries.
+    - Filtering in API/SPA.
+    - Sorting in API/SPA.
