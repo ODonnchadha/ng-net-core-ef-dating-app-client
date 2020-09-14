@@ -170,5 +170,8 @@
       - An expression tree will be created. Execution:
         - .ToListAsync(), ToArrayAsync(), ToDictionary()
         - Singleton queries.
+      
+      - https://valor-software.com/ngx-bootstrap/#/pagination
+
     - Filtering in API/SPA.
     - Sorting in API/SPA.

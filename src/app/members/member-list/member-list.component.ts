@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginatedResult, Pagination } from '../../_models/pagination';
 import { User } from '../../_models/user';
 import { AlertifyService } from '../../_services/alertify.service';
 import { UserService } from '../../_services/user.service';
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
+  pagination: Pagination;
   users: User[];
 
   constructor(
@@ -19,9 +21,23 @@ export class MemberListComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data => {
-      const key = 'users';
-      this.users = data[key].result;
+      this.users = data['users'].result;
+      this.pagination = data['users'].pagination;
     }));
   }
 
+  loadUsers() {
+    this.userService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage)
+    .subscribe((res: PaginatedResult<User[]>) => {
+      this.users = res.result;
+      this.pagination = res.pagination;
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
+
+  pageChanged(event: any) {
+    this.pagination.currentPage = event.page;
+    this.loadUsers();
+  }
 }
