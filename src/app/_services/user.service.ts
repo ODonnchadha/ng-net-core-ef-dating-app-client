@@ -48,6 +48,11 @@ export class UserService {
     );
   }
 
+  sendLike(id: number, recipientId: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + id + '/likes/' + recipientId, {});
+  }
+
   setDefaultPhoto(userId: number, id: number) {
     return this.http.post(
       this.baseUrl + 'users/' + userId + '/photos/' + id + '/default', {});

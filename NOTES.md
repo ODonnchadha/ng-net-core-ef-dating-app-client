@@ -175,3 +175,5 @@
 
     - Filtering in API/SPA.
     - Sorting in API/SPA.
+
+  # 'Like' functionality.
