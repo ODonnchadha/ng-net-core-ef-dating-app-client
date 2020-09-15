@@ -30,6 +30,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { AuthService } from './_services/auth.service';
 import { UserService } from './_services/user.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { ListsResolver } from './_resolvers/lists.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
@@ -82,6 +83,7 @@ import { TimeAgoExtendsPipe } from './_extensions/TimeAgoExtendsPipe';
     AuthGuard,
     PreventUnsavedChangesGuard,
     ErrorInterceptorProvider,
+    ListsResolver,
     MemberDetailResolver,
     MemberEditResolver,
     MemberListResolver
