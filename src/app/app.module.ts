@@ -34,6 +34,7 @@ import { ListsResolver } from './_resolvers/lists.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { TimeAgoExtendsPipe } from './_extensions/TimeAgoExtendsPipe';
 
@@ -86,7 +87,8 @@ import { TimeAgoExtendsPipe } from './_extensions/TimeAgoExtendsPipe';
     ListsResolver,
     MemberDetailResolver,
     MemberEditResolver,
-    MemberListResolver
+    MemberListResolver,
+    MessagesResolver
   ],
   bootstrap: [AppComponent]
 })
