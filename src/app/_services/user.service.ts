@@ -15,6 +15,10 @@ export class UserService {
   currentUser: User;
   constructor(private http: HttpClient) { }
 
+  deleteMessage(id: number, userId: number) {
+    return this.http.post(this.baseUrl + 'users/' + userId + '/messages/' + id, {});
+  }
+
   deletePhoto(userId: number, id: number) {
     return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
   }
@@ -81,6 +85,11 @@ export class UserService {
         return paginatedResult;
       })
     );
+  }
+
+  messageAsRead(userId: number, messageId: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + userId + '/messages/' + messageId, + '/read', {}).subscribe();
   }
 
   sendLike(id: number, recipientId: number) {

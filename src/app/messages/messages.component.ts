@@ -29,6 +29,18 @@ export class MessagesComponent implements OnInit {
     });
   }
 
+  deleteMessage(messageId: number) {
+    this.alertify.confirm('Are you sure you want to delete this message', () => {
+      const id = this.authService.decodedToken.nameid;
+      this.userService.deleteMessage(messageId, id).subscribe(() => {
+        this.loadMessages();
+        this.alertify.success('Message has been deleted');
+      }, error => {
+        this.alertify.error(error);
+      });
+    });
+  }
+
   loadMessages() {
     const id = this.authService.decodedToken.nameid;
     this.userService.getMessages(id, this.pagination.currentPage, this.pagination.itemsPerPage,
