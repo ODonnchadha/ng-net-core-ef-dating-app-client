@@ -88,6 +88,10 @@ export class UserService {
       this.baseUrl + 'users/' + id + '/likes/' + recipientId, {});
   }
 
+  sendMessage(id: number, message: Message) {
+    return this.http.post(this.baseUrl + 'users/' + id + '/messages', message);
+  }
+
   setDefaultPhoto(userId: number, id: number) {
     return this.http.post(
       this.baseUrl + 'users/' + userId + '/photos/' + id + '/default', {});

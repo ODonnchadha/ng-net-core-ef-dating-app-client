@@ -10,7 +10,7 @@
         <!-- to them-->
         <div *ngIf="message.senderId === recipientId">
           <span class="chat-img float-left">
-            <img class="rounded-circle" src="{{message.senderPhotoUrl}}" alt="{{message.senderKnownAs}}">
+            <img class="rounded-circle" src="{{message.senderProfileUrl}}" alt="{{message.senderKnownAs}}">
           </span>
           <div class="chat-body">
             <div class="header">
@@ -29,7 +29,7 @@
         <!-- to me -->
         <div *ngIf="message.senderId != recipientId">
           <span class="chat-img float-right">
-            <img class="rounded-circle" src="{{message.senderPhotoUrl}}" alt="{{message.senderKnownAs}}">
+            <img class="rounded-circle" src="{{message.senderProfileUrl}}" alt="{{message.senderKnownAs}}">
           </span>
           <div class="chat-body">
             <div class="header">
@@ -45,7 +45,7 @@
                 </span>
               </small>
               <strong class="primary-font float-right">
-                {{message.senderKnownAs}}"
+                {{message.senderKnownAs}}
               </strong>
             </div>
             <p>{{message.content}}</p>
@@ -56,11 +56,17 @@
   </div> 
 
   <div class="card-footer">
-    <form action="">
+    <form #messageForm="ngForm" (ngSubmit)="messageForm.valid && sendMessage()">
       <div class="input-group">
-        <input type="text" class="form-control input-sm" placeholder="send a private message">
+        <input 
+          type="text"
+          [(ngModel)]="message.content"
+          name="content"
+          required
+          class="form-control input-sm" 
+          placeholder="send a private message">
         <div class="input-group-append">
-          <button class="btn btn-primary">Send</button>
+          <button class="btn btn-primary" [disabled]="!messageForm.valid">Send</button>
         </div>
       </div>
     </form>
