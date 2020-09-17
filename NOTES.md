@@ -1,3 +1,5 @@
+- https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/
+
 - Walking Skeleton:
   ```javascript
     ng new ng-net-core-ef-dating-app-client
@@ -176,4 +178,10 @@
     - Filtering in API/SPA.
     - Sorting in API/SPA.
 
-  # 'Like' functionality.
+  # Private Messaging:
+    - The Message entity.
+    - CRUD.
+    - Inbox, outbox, unread messages.
+    - Add a 'chat' design to the messaging system.
+    - Add the 'mark as read' functionality.
+    - Deleting messages.

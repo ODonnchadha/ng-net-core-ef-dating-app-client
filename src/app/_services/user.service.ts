@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from '../_models/user';
 import { PaginatedResult } from '../_models/Pagination';
 import { map } from 'rxjs/operators';
+import { Message } from '../_models/message';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,44 @@ export class UserService {
   currentUser: User;
   constructor(private http: HttpClient) { }
 
+  deleteMessage(id: number, userId: number) {
+    return this.http.post(this.baseUrl + 'users/' + userId + '/messages/' + id, {});
+  }
+
   deletePhoto(userId: number, id: number) {
     return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
   }
 
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
+  }
+
+  getMessageThread(id: number, recipientId: number) {
+    return this.http.get<Message[]>(
+      this.baseUrl + 'users/' + id + '/messages/threads/' + recipientId);
+  }
+
+  getMessages(id: number, page?, itemsPerPage?, messageContainer?) {
+    const paginatedResult: PaginatedResult<Message[]> = new PaginatedResult<Message[]>();
+
+    let params = new HttpParams();
+    params = params.append('MessageContainer', messageContainer);
+
+    if (page != null && itemsPerPage != null) {
+      params = params.append('pageNumber', page);
+      params = params.append('pageSize', itemsPerPage);
+    }
+
+    return this.http.get<Message[]>(this.baseUrl + 'users/' + id + '/messages', {
+      observe: 'response', params
+    }).pipe(map(response => {
+      paginatedResult.result = response.body;
+      if (response.headers.get('pagination') !== null) {
+        paginatedResult.pagination = JSON.parse(response.headers.get('pagination'));
+      }
+
+      return paginatedResult;
+    }));
   }
 
   getUsers(page?, itemsPerPage?, userParams?, likesParam?): Observable<PaginatedResult<User[]>> {
@@ -54,9 +87,18 @@ export class UserService {
     );
   }
 
+  messageAsRead(userId: number, messageId: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + userId + '/messages/' + messageId, + '/read', {}).subscribe();
+  }
+
   sendLike(id: number, recipientId: number) {
     return this.http.post(
       this.baseUrl + 'users/' + id + '/likes/' + recipientId, {});
+  }
+
+  sendMessage(id: number, message: Message) {
+    return this.http.post(this.baseUrl + 'users/' + id + '/messages', message);
   }
 
   setDefaultPhoto(userId: number, id: number) {
