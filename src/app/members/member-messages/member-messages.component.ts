@@ -7,7 +7,7 @@ import { Message } from '../../_models/message';
 @Component({
   selector: 'app-member-messages',
   templateUrl: './member-messages.component.html',
-  styleUrls: ['./member-messages.component.scss']
+  styleUrls: ['./member-messages.component.css']
 })
 export class MemberMessagesComponent implements OnInit {
   @Input() recipientId: number;
