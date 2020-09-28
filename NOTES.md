@@ -185,3 +185,49 @@
     - Add a 'chat' design to the messaging system.
     - Add the 'mark as read' functionality.
     - Deleting messages.
+
+## Publishing:
+  - Using ng-build.
+  - Running on the Kestrel server.
+    - Modify the "build" options within angular.json.
+    - Ensure that the API, in this case, servers up the static HTML content.
+    - wwwroot, e.g.:
+    - Modify startup within API startup for static files:
+      - app.UseDefaultFiles();
+      - app.UseStaticFiles();
+    - Let the API know about the UIs routes.
+    ```csharp
+      app.UseMvc(routes => {
+        routes.MapSpaFallbackRoute(
+          name: "spa-fallback",
+          defaults: new { controller = "Fallback", action = "Index" }
+        );
+      });
+
+      public class FallbackController: Controller
+      {
+        public  IActionResult Index()
+        {
+          return PhysicalFile(
+            Path.Combine(
+              Directory.GetCurrentDirectory(),
+              "wwwroot", 
+              "index.html"), "text/HTML");
+        }
+      }
+    ```
+
+  - AOT (ahead-of-time compiler. Not just-in-time) Production Build.
+    - ng-build command. --prod flag engages build optimization features.
+    ```javascript
+      export const environment = {
+        apiUrl: 'api/'
+      }
+    ng build --prod
+    ```
+    - within angular.json we perform a compromize in order to obtain the alertify slide functionality.
+    ```javascript
+      "buildOptimizer": false
+    ```
+  - Adding additional DB providers.
+  - Publishing to IIS, Linux, and Azure.
