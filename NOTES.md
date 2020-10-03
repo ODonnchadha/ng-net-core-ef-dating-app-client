@@ -230,4 +230,16 @@
       "buildOptimizer": false
     ```
   - Adding additional DB providers.
+    - Microsoft.EntityFrameworkCore.SqlServer.
+    - Pomelo.EntityFrameworkCore.MtSql.
+  - Lazy loading: Paging:
+    - IQueryable<T>
+    - e.g.: .CountAsync() with "Ignored Includes."
+      - 1. Configure DB COntext to ignore warnings.
+      - 2. Lazy Loading. Install a package entitled:
+        - Microsoft.EntityFrameworkCore.Proxies.
+        - (Pay attention to runtime version.)
+        - Add: context.UseLazyLoadingProxies();
+        - Remove: All .Include() statements with a given repository.
+        - Mark the "collections" within given Entities as virtual.
   - Publishing to IIS, Linux, and Azure.
