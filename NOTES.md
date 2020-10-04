@@ -243,3 +243,13 @@
         - Remove: All .Include() statements with a given repository.
         - Mark the "collections" within given Entities as virtual.
   - Publishing to IIS, Linux, and Azure.
+    - IIS:
+      ```javascript
+        dotnet publish --configuration Release
+      ```
+      - ..bin\Release\..\publish
+      - Install the .NET Core Runtime & Hosting Bundle.
+    - Linux:
+      - Digital Ocean Cloud Server.
+      - LAMP server. Linux. Apache. MySQL. PHP.
+      - Via Windows. Use Powershell & SSH.
